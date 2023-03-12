@@ -1,0 +1,90 @@
+W:\development\python\PycharmProjects\testCLM\venv2\Scripts\python.exe W:\vse\clanky\04\repo\uic_cond\code.py 
+Cleverminer version  1.0.5
+W:\vse\clanky\04\repo\uic_cond\code.py:11: DtypeWarning: Columns (8,14) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv ('w:\\accidents.txt ', encoding='cp1250', sep='\t')
+Cleverminer version 1.0.5.
+No automatic data conversions will be made.
+No automatic data conversions will be made.
+Starting data preparation ...
+Encoding columns into bit-form...
+Encoding columns into bit-form...done
+Data preparation finished.
+No automatic data conversions will be made.
+Will go for  UICMiner
+Starting to mine rules.
+Done. Total verifications : 56750, rules 27, times: prep 1.00sec, processing 19.03sec
+Variable Driver_Age_Band has 13 categories: 16 - 20 21 - 25 26 - 35 36 - 45 46 - 55 56 - 65 66 - 75 Over 75
+Variable Driver_IMD has 13 categories: 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
+Variable Sex has 13 categories: Female Male
+Variable Journey has 13 categories: 2,Commuting to/from work 3,Taking pupil to/from school 4,Pupil riding to/from school 5 Other/Not known Part of work
+Variable Casualties has 13 categories: 1 2 3 4 5 6 7 - 68
+Variable Severity has 13 categories: Fatal Serious Slight
+Variable Area has 13 categories: 1,Urban 2,Rural
+Variable Vehicle_Age has 13 categories: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16-20 >20
+Variable Road_Type has 13 categories: 1,Roundabout 2,One way street 3,Dual carriageway 6,Single carriageway 7,Slip road
+Variable Speed_limit has 13 categories: 10 15 20 30 40 50 60 70
+Variable Light has 13 categories: 1,Daylight 4,Darkness - lights lit 5,Darkness - lights unlit 6,Darkness - no lighting 7,Darkness - lighting unknown
+Variable Vehicle_Location has 13 categories: 0,On main c'way - not in restricted lane 1,Tram/Light rail track 2,Bus lane 3,Busway (including guided busway) 4,Cycle lane (on main carriageway) 5,Cycleway or shared use footway (not part of  main carriageway) 6,On lay-by or hard shoulder 7,Entering lay-by or hard shoulder 8,Leaving lay-by or hard shoulder 9,Footway (pavement)
+Variable Vehicle_Type has 13 categories: 10,Minibus (8 - 16 passenger seats) 16,Ridden horse 17,Agricultural vehicle 18,Tram 20,Goods over 3.5t. and under 7.5t 21,Goods 7.5 tonnes + 22,Mobility scooter 23,Electric motorcycle 4,Motorcycle over 125cc and up to 500cc 90,Other vehicle 97,Motorcycle - unknown cc 98,Goods vehicle - unknown weight Bus_coach_17+ Car Motorcycle 125cc and under Motorcycle 50cc and under Motorcycle over 500cc Pedal cycle Taxi/Private hire car Van / Goods 3.5 tonnes mgw or under
+
+List of rules:
+RULEID BASE  AAD_SCORE  Rule
+     1  5253 20.374     Driver_Age_Band(46 - 55) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+     2  6921 23.380     Driver_Age_Band(46 - 55 56 - 65) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+     3  7773 23.307     Driver_Age_Band(46 - 55 56 - 65 66 - 75) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+     4  8961 21.087     Driver_Age_Band(46 - 55 56 - 65 66 - 75) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+     5  2353 25.324     Driver_Age_Band(56 - 65) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+     6  2715 22.961     Driver_Age_Band(56 - 65) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+     7  3205 24.630     Driver_Age_Band(56 - 65 66 - 75) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+     8  3733 24.571     Driver_Age_Band(56 - 65 66 - 75 Over 75) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+     9  4309 22.213     Driver_Age_Band(56 - 65 66 - 75 Over 75) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+    10  7661 21.382     Road_Type(2,One way street 3,Dual carriageway) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+    11  8547 20.186     Road_Type(2,One way street 3,Dual carriageway) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+    12  7937 21.726     Road_Type(3,Dual carriageway) & Light(5,Darkness - lights unlit 6,Darkness - no lighting) => Severity(*) | Sex(Female)
+    13  7497 21.661     Road_Type(3,Dual carriageway) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+    14  8199 20.819     Road_Type(3,Dual carriageway) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+    15  1143 25.660     Speed_limit(50 60) & Vehicle_Type(Pedal cycle) => Severity(*) | Sex(Female)
+    16  6791 22.165     Speed_limit(70) & Light(6,Darkness - no lighting) => Severity(*) | Sex(Female)
+    17  7157 21.980     Speed_limit(70) & Light(6,Darkness - no lighting 7,Darkness - lighting unknown) => Severity(*) | Sex(Female)
+    18  1103 20.187     Driver_Age_Band(56 - 65 66 - 75 Over 75) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    19   493 20.503     Driver_IMD(3.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    20   517 20.285     Driver_IMD(9.0 10.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    21  2673 23.338     Area(1,Urban) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    22  1687 23.435     Road_Type(2,One way street 3,Dual carriageway) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    23  1683 21.925     Road_Type(3,Dual carriageway 7,Slip road) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    24  2753 20.198     Speed_limit(30) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    25  1451 20.564     Light(4,Darkness - lights lit 6,Darkness - no lighting) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    26   703 24.796     Light(6,Darkness - no lighting) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+    27   743 23.498     Light(6,Darkness - no lighting 7,Darkness - lighting unknown) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | Sex(Male)
+
+
+CleverMiner task processing summary:
+
+Task type : UICMiner
+Number of verifications : 56750
+Number of rules : 27
+Total time needed : 00h 00m 20s
+Time of data preparation : 00h 00m 01s
+Time of rule mining : 00h 00m 19s
+
+
+
+Rule id : 5
+
+Base :  2353  Relative base : 0.004   aad score : 25.32356870275083
+
+Condition  : Sex(Female)
+Antecedent : Driver_Age_Band(56 - 65) & Light(6,Darkness - no lighting)
+
+Histogram                                        [157, 525, 1671]
+Histogram on full set with condition             [1527, 22976, 112767]
+Relative histogram                               [0.06672333191670209, 0.22311942201444965, 0.7101572460688482]
+Relative histogram on full set with condition    [0.011124062067458295, 0.16737815983099003, 0.8214977781015517]
+ 
+Interpretation:
+    For Sex(Female): Severity(Fatal) has occurence 1.1%, with antecedent it has occurence 6.7%, that is 5.998 times more.
+    For Sex(Female): Severity(Serious) has occurence 16.7%, with antecedent it has occurence 22.3%, that is 1.333 times more.
+    For Sex(Female): Severity(Slight) has occurence 82.1%, with antecedent it has occurence 71.0%, that is 0.864 times more.
+
+
+Process finished with exit code 0

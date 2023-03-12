@@ -1,0 +1,127 @@
+W:\development\python\PycharmProjects\testCLM\venv2\Scripts\python.exe W:\vse\clanky\04\repo\uic_basic\code.py 
+Cleverminer version  1.0.5
+W:\vse\clanky\04\repo\uic_basic\code.py:11: DtypeWarning: Columns (8,14) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv ('w:\\accidents.txt ', encoding='cp1250', sep='\t')
+Cleverminer version 1.0.5.
+No automatic data conversions will be made.
+No automatic data conversions will be made.
+Starting data preparation ...
+Encoding columns into bit-form...
+Encoding columns into bit-form...done
+Data preparation finished.
+No automatic data conversions will be made.
+Will go for  UICMiner
+Starting to mine rules.
+Done. Total verifications : 32278, rules 26, times: prep 0.98sec, processing 9.97sec
+Variable Driver_Age_Band has 13 categories: 16 - 20 21 - 25 26 - 35 36 - 45 46 - 55 56 - 65 66 - 75 Over 75
+Variable Driver_IMD has 13 categories: 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0
+Variable Sex has 13 categories: Female Male
+Variable Journey has 13 categories: 2,Commuting to/from work 3,Taking pupil to/from school 4,Pupil riding to/from school 5 Other/Not known Part of work
+Variable Casualties has 13 categories: 1 2 3 4 5 6 7 - 68
+Variable Severity has 13 categories: Fatal Serious Slight
+Variable Area has 13 categories: 1,Urban 2,Rural
+Variable Vehicle_Age has 13 categories: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16-20 >20
+Variable Road_Type has 13 categories: 1,Roundabout 2,One way street 3,Dual carriageway 6,Single carriageway 7,Slip road
+Variable Speed_limit has 13 categories: 10 15 20 30 40 50 60 70
+Variable Light has 13 categories: 1,Daylight 4,Darkness - lights lit 5,Darkness - lights unlit 6,Darkness - no lighting 7,Darkness - lighting unknown
+Variable Vehicle_Location has 13 categories: 0,On main c'way - not in restricted lane 1,Tram/Light rail track 2,Bus lane 3,Busway (including guided busway) 4,Cycle lane (on main carriageway) 5,Cycleway or shared use footway (not part of  main carriageway) 6,On lay-by or hard shoulder 7,Entering lay-by or hard shoulder 8,Leaving lay-by or hard shoulder 9,Footway (pavement)
+Variable Vehicle_Type has 13 categories: 10,Minibus (8 - 16 passenger seats) 16,Ridden horse 17,Agricultural vehicle 18,Tram 20,Goods over 3.5t. and under 7.5t 21,Goods 7.5 tonnes + 22,Mobility scooter 23,Electric motorcycle 4,Motorcycle over 125cc and up to 500cc 90,Other vehicle 97,Motorcycle - unknown cc 98,Goods vehicle - unknown weight Bus_coach_17+ Car Motorcycle 125cc and under Motorcycle 50cc and under Motorcycle over 500cc Pedal cycle Taxi/Private hire car Van / Goods 3.5 tonnes mgw or under
+
+List of rules:
+RULEID BASE  AAD_SCORE  Rule
+     1  3673 20.358     Driver_Age_Band(36 - 45 46 - 55) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     2  4661 21.122     Driver_Age_Band(36 - 45 46 - 55 56 - 65) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     3  1103 23.819     Driver_Age_Band(56 - 65 66 - 75 Over 75) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     4   493 24.209     Driver_IMD(3.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     5   467 23.438     Driver_IMD(5.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     6   315 22.527     Driver_IMD(9.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     7   517 23.952     Driver_IMD(9.0 10.0) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     8  2673 27.432     Area(1,Urban) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+     9  1687 27.564     Road_Type(2,One way street 3,Dual carriageway) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    10  5307 21.474     Road_Type(3,Dual carriageway 6,Single carriageway) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    11  1683 25.832     Road_Type(3,Dual carriageway 7,Slip road) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    12  2809 23.547     Speed_limit(20 30) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    13  2753 23.842     Speed_limit(30) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    14  1297 21.422     Speed_limit(70) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    15   775 20.951     Light(4,Darkness - lights lit 5,Darkness - lights unlit) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    16  1451 24.275     Light(4,Darkness - lights lit 6,Darkness - no lighting) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    17   703 29.079     Light(6,Darkness - no lighting) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    18   743 27.595     Light(6,Darkness - no lighting 7,Darkness - lighting unknown) & Vehicle_Type(21,Goods 7.5 tonnes +) => Severity(*) | ---
+    19   645 22.592     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(1) => Severity(*) | ---
+    20  1963 21.570     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(1 2 3) => Severity(*) | ---
+    21   641 22.380     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(3) => Severity(*) | ---
+    22   495 21.436     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(5) => Severity(*) | ---
+    23   433 20.565     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(6) => Severity(*) | ---
+    24   205 20.405     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(9) => Severity(*) | ---
+    25   235 21.896     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(11 12 13 14) => Severity(*) | ---
+    26   245 21.820     Vehicle_Type(21,Goods 7.5 tonnes +) & Vehicle_Age(11 12 13 14 15) => Severity(*) | ---
+
+
+CleverMiner task processing summary:
+
+Task type : UICMiner
+Number of verifications : 32278
+Number of rules : 26
+Total time needed : 00h 00m 10s
+Time of data preparation : 00h 00m 00s
+Time of rule mining : 00h 00m 09s
+
+
+
+Rule id : 1
+
+Base :  3673  Relative base : 0.007   aad score : 20.357760751991407
+
+Condition  : ---
+Antecedent : Driver_Age_Band(36 - 45 46 - 55) & Vehicle_Type(21,Goods 7.5 tonnes +)
+
+Histogram                                        [355, 857, 2461]
+Histogram on full set with condition             [10349, 105754, 422886]
+Relative histogram                               [0.09665123876939831, 0.23332425809964608, 0.6700245031309556]
+Relative histogram on full set with condition    [0.019200762909818196, 0.19620808587930366, 0.7845911512108782]
+ 
+Interpretation:
+    Severity(Fatal) has occurence 1.9%, with antecedent it has occurence 9.7%, that is 5.034 times more.
+    Severity(Serious) has occurence 19.6%, with antecedent it has occurence 23.3%, that is 1.189 times more.
+    Severity(Slight) has occurence 78.5%, with antecedent it has occurence 67.0%, that is 0.854 times more.
+
+
+
+Rule id : 2
+
+Base :  4661  Relative base : 0.009   aad score : 21.121639222925207
+
+Condition  : ---
+Antecedent : Driver_Age_Band(36 - 45 46 - 55 56 - 65) & Vehicle_Type(21,Goods 7.5 tonnes +)
+
+Histogram                                        [463, 1147, 3051]
+Histogram on full set with condition             [10349, 105754, 422886]
+Relative histogram                               [0.0993349066723879, 0.24608453121647714, 0.6545805621111349]
+Relative histogram on full set with condition    [0.019200762909818196, 0.19620808587930366, 0.7845911512108782]
+ 
+Interpretation:
+    Severity(Fatal) has occurence 1.9%, with antecedent it has occurence 9.9%, that is 5.173 times more.
+    Severity(Serious) has occurence 19.6%, with antecedent it has occurence 24.6%, that is 1.254 times more.
+    Severity(Slight) has occurence 78.5%, with antecedent it has occurence 65.5%, that is 0.834 times more.
+
+
+
+Rule id : 17
+
+Base :   703  Relative base : 0.001   aad score : 29.078778647946276
+
+Condition  : ---
+Antecedent : Light(6,Darkness - no lighting) & Vehicle_Type(21,Goods 7.5 tonnes +)
+
+Histogram                                        [92, 133, 478]
+Histogram on full set with condition             [10349, 105754, 422886]
+Relative histogram                               [0.13086770981507823, 0.1891891891891892, 0.6799431009957326]
+Relative histogram on full set with condition    [0.019200762909818196, 0.19620808587930366, 0.7845911512108782]
+ 
+Interpretation:
+    Severity(Fatal) has occurence 1.9%, with antecedent it has occurence 13.1%, that is 6.816 times more.
+    Severity(Serious) has occurence 19.6%, with antecedent it has occurence 18.9%, that is 0.964 times more.
+    Severity(Slight) has occurence 78.5%, with antecedent it has occurence 68.0%, that is 0.867 times more.
+
+
+Process finished with exit code 0
